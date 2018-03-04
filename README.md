@@ -49,7 +49,7 @@ d3.csv("/path/to/file.csv", callback);
 
 ## API Reference
 
-<a name="request" href="#request">#</a> d3.<b>request</b>(<i>url</i>[, <i>callback</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L4 "Source")
+<a name="request" href="#request">#</a> d3.<b>request</b>(<i>url</i>[, <i>callback</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L4 "Source")
 
 根据指定的 *url* 返回一个新的 *request*。如果没有指定 *callback* 则返回的 *request* 不会立即 [sent](#request_send) 此时还可以继续配置其他选项。如果指定了 *callback* 则等价于立即调用 [*request*.get](#request_get)：
 
@@ -60,7 +60,7 @@ d3.request(url)
 
 如果你希望指定一个特殊的请求头或者 mime 类型，则必须不能直接给构造器指定 *callback*。要使用 [*request*.header](#request_header) 或 [*request*.mimeType](#request_mimeType) 设置好之后使用 [*request*.get](#request_get) 来指定 *callback*。 参考 d3.json](#json), [d3.csv](#csv), [d3.tsv](#tsv), [d3.html](#html) 和 [d3.xml](#xml)。
 
-<a name="request_header" href="#request_header">#</a> <i>request</i>.<b>header</b>(<i>name</i>[, <i>value</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L51 "Source")
+<a name="request_header" href="#request_header">#</a> <i>request</i>.<b>header</b>(<i>name</i>[, <i>value</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L51 "Source")
 
 如果指定了 *value* 则将请求头对应的 *name* 设置为 *value* 并返回请求实例。如果 *value* 为 `null` 则表示移除 *name* 对应的值。如果没有指定 *value* 则返回当前实例请求头 *name* 对应的值。请求头名称不区分大小写。
 
@@ -75,7 +75,7 @@ d3.request(url)
 
 请注意这个模块默认情况下不会将 `X-Requested-With` 设置为 `XMLHttpRequest`. 一些服务器需要这个头来缓解不必要的请求，但是会触发跨域检查，如果需要的话需要在发送请求前设置这个头。
 
-<a name="request_mimeType" href="#request_mimeType">#</a> <i>request</i>.<b>mimeType</b>([<i>type</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L60 "Source")
+<a name="request_mimeType" href="#request_mimeType">#</a> <i>request</i>.<b>mimeType</b>([<源码i>type</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L60 "Source")
 
 如果指定了 *type* 则表示将请求实例的 mime type 设置为指定的值并返回当前实例。如果 *type* 为 `null` 则表示清除当前的 mime type (如果有的话)。如果 *type* 没有指定则返回当前的 mime type，默认为 `null`. mime type 被用来设置 ["Accept" request header](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) 和 [overrideMimeType](http://www.w3.org/TR/XMLHttpRequest/#the-overridemimetype%28%29-method)(如果支持)。
 
@@ -87,27 +87,27 @@ d3.request(url)
     .get(callback);
 ```
 
-<a name="request_user" href="#request_user">#</a> <i>request</i>.<b>user</b>([<i>value</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L80 "Source")
+<a name="request_user" href="#request_user">#</a> <i>request</i>.<b>user</b>([<源码i>value</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L80 "Source")
 
 如果指定了 *value* 则设置将用于认证的 user name 设置为指定的 *value* 并返回当前的请求实例。如果没有指定 *value* 则返回当前的 user name，默认为 `null`.
 
-<a name="request_password" href="#request_password">#</a> <i>request</i>.<b>password</b>([<i>value</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L84 "Source")
+<a name="request_password" href="#request_password">#</a> <i>request</i>.<b>password</b>([<源码i>value</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L84 "Source")
 
 如果指定了 *value* 则设置将用于认证的 password 设置为指定的 *value* 并返回当前的请求实例。如果没有指定 *value* 则返回当前的 password，默认为 `null`.
 
-<a name="request_timeout" href="#request_timeout">#</a> <i>request</i>.<b>timeout</b>([<i>timeout</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L74 "Source")
+<a name="request_timeout" href="#request_timeout">#</a> <i>request</i>.<b>timeout</b>([<源码i>timeout</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L74 "Source")
 
 如果指定了 *timeout* 则将请求的 [timeout](http://www.w3.org/TR/XMLHttpRequest/#the-timeout-attribute) 属性设置为指定的毫秒数并返回当前的请求实例。如果 *timeout* 没有指定则返回当前的响应超时时间，默认为 0.
 
-<a name="request_responseType" href="#request_responseType">#</a> <i>request</i>.<b>responseType</b>([<i>type</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L68 "Source")
+<a name="request_responseType" href="#request_responseType">#</a> <i>request</i>.<b>responseType</b>([<源码i>type</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L68 "Source")
 
 如果指定了 *type* 则设置 [response type](http://www.w3.org/TR/XMLHttpRequest/#the-responsetype-attribute) 并返回当前的请求实例。典型的类型为 `​` (空字符串), `arraybuffer`, `blob`, `document`, 和 `text`。如果没有指定 *type* 则返回当前的响应类型，默认为 ``.
 
-<a name="request_response" href="#request_response">#</a> <i>request</i>.<b>response</b>(<i>value</i>) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L90 "Source")
+<a name="request_response" href="#request_response">#</a> <i>request</i>.<b>response</b>(<i>value</i>) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L90 "Source")
 
 设置响应值处理函数并返回当前请求实例。响应值函数用来将响应值 `XMLHttpRequest` 进一步处理为期望的数据。可以参考 [json](#json) 和 [text](#text).
 
-<a name="request_get" href="#request_get">#</a> <i>request</i>.<b>get</b>([<i>data</i>][, <i>callback</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L96 "Source")
+<a name="request_get" href="#request_get">#</a> <i>request</i>.<b>get</b>([<源码i>data</i>][, <i>callback</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L96 "Source")
 
 等价于使用 `GET` 方法进行 [*request*.send](#request_send) 操作:
 
@@ -115,7 +115,7 @@ d3.request(url)
 request.send("GET", data, callback);
 ```
 
-<a name="request_post" href="#request_post">#</a> <i>request</i>.<b>post</b>([<i>data</i>][, <i>callback</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L101 "Source")
+<a name="request_post" href="#request_post">#</a> <i>request</i>.<b>post</b>([<源码i>data</i>][, <i>callback</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L101 "Source")
 
 等价于使用 `POST` 方法进行 [*request*.send](#request_send) 操作:
 
@@ -123,7 +123,7 @@ request.send("GET", data, callback);
 request.send("POST", data, callback);
 ```
 
-<a name="request_send" href="#request_send">#</a> <i>request</i>.<b>send</b>(<i>method</i>[, <i>data</i>][, <i>callback</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L106 "Source")
+<a name="request_send" href="#request_send">#</a> <i>request</i>.<b>send</b>(<i>method</i>[, <i>data</i>][, <i>callback</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L106 "Source")
 
 使用指定的 *method* (比如 `GET` 或 `POST`) 发出请求，可以通过 *data* 参数设置请求体。如果指定了 *callback* 则在请求成功或失败时会调用。回调会接受两个参数: `error` (如果出错的话) 以及 [response value(响应值)](#request_response)。如果出错的话 响应值为 `undefined`. 等价于:
 
@@ -136,11 +136,11 @@ request
 
 如果没有指定 *callback* 则 "load" 和 "error" 事件句柄应该通过 [*request*.on](#request_on) 来注册。
 
-<a name="request_abort" href="#request_abort">#</a> <i>request</i>.<b>abort</b>() [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L121 "Source")
+<a name="request_abort" href="#request_abort">#</a> <i>request</i>.<b>abort</b>() [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L121 "Source")
 
 中断请求并返回当前的请求实例。参考 [XMLHttpRequest’s abort](http://www.w3.org/TR/XMLHttpRequest/#the-abort%28%29-method).
 
-<a name="request_on" href="#request_on">#</a> <i>request</i>.<b>on</b>(<i>type</i>[, <i>listener</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/request.js#L126 "Source")
+<a name="request_on" href="#request_on">#</a> <i>request</i>.<b>on</b>(<i>type</i>[, <i>listener</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/request.js#L126 "Source")
 
 如果指定了 *listener* 则将对应的 *type* 的句柄设置为 *listener* 并返回当前的请求实例。如果对应的 *type* 已经有事件句柄则将其替换。如果 *listener* 为 `null` 则表示将指定的 *type* 句柄移除(如果有的话)。如果没有指定 *listener* 则返回当前 *type* 对应的事件监听器(如果有的话)。
 
@@ -153,7 +153,7 @@ request
 
 为同一种时间注册多个事件监听器时需要为 *type* 设置一个名称，比如 `load.foo` 和 `load.bar`. 参考 [d3-dispatch](https://github.com/d3/d3-dispatch) 获取更多信息。
 
-<a name="csv" href="#csv">#</a> d3.<b>csv</b>(<i>url</i>[[, <i>row</i>], <i>callback</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/csv.js "Source")
+<a name="csv" href="#csv">#</a> d3.<b>csv</b>(<i>url</i>[[, <i>row</i>], <i>callback</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/csv.js "Source")
 
 返回一个用来请求指定 *url* 并且默认 mime type 为 `text/csv` 的 [CSV](https://github.com/d3/d3-dsv#csvParse) 文件。如果没有指定 *callback* 则等价于:
 
@@ -199,7 +199,7 @@ d3.csv(url)
     .get(callback);
 ```
 
-<a name="html" href="#html">#</a> d3.<b>html</b>(<i>url</i>[, <i>callback</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/html.js "Source")
+<a name="html" href="#html">#</a> d3.<b>html</b>(<i>url</i>[, <i>callback</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/html.js "Source")
 
 返回一个新的用于从指定 *url* 获取 HTML 并且默认 mime type 为 `text/html` 的 [*request*](#request)。HTML 文件以 [document fragment](https://developer.mozilla.org/en-US/docs/DOM/range.createContextualFragment) 的形式返回。如果没有指定 *callback* 则等价于: 
 
@@ -220,7 +220,7 @@ d3.request(url)
 
 HTML 的解析需要全局的 document 并且依赖 [DOM Ranges](https://dom.spec.whatwg.org/#ranges)，从 8.3 版本开始 [not supported by JSDOM](https://github.com/tmpvar/jsdom/issues/317) 不再支持，因此这个方法只能在浏览器中使用，而不能在 Node 环境中使用。
 
-<a name="json" href="#json">#</a> d3.<b>json</b>(<i>url</i>[, <i>callback</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/json.js "Source")
+<a name="json" href="#json">#</a> d3.<b>json</b>(<i>url</i>[, <i>callback</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/json.js "Source")
 
 返回一个从指定 *url* 以 [get](#request_get) 形式获取 [JSON](http://json.org) 文件的 [*request*](#request)，默认的 mime type 为 `application/json`。如果没有指定 *callback* 则等价于:
 
@@ -239,7 +239,7 @@ d3.request(url)
     .get(callback);
 ```
 
-<a name="text" href="#text">#</a> d3.<b>text</b>(<i>url</i>[, <i>callback</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/text.js "Source")
+<a name="text" href="#text">#</a> d3.<b>text</b>(<i>url</i>[, <i>callback</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/text.js "Source")
 
 返回一个从指定 *url* 以 [get](#request_get)形式获取文本文件的 [*request*](#request)，默认的 mime type 为 `text/plain`. 如果没有指定 *callback* 则等价于:
 
@@ -258,7 +258,7 @@ d3.request(url)
     .get(callback);
 ```
 
-<a name="tsv" href="#tsv">#</a> d3.<b>tsv</b>(<i>url</i>[[, <i>row</i>], <i>callback</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/tsv.js "Source")
+<a name="tsv" href="#tsv">#</a> d3.<b>tsv</b>(<i>url</i>[[, <i>row</i>], <i>callback</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/tsv.js "Source")
 
 返回一个用来请求指定 *url* 并且默认 mime type 为 `text/tab-separated-values` 的 [TSV](https://github.com/d3/d3-dsv#tsvParse) 文件。如果没有指定 *callback* 则等价于:
 
@@ -304,7 +304,7 @@ d3.tsv(url)
     .get(callback);
 ```
 
-<a name="xml" href="#xml">#</a> d3.<b>xml</b>(<i>url</i>[, <i>callback</i>]) [<>](https://github.com/d3/d3-request/blob/master/src/xml.js "Source")
+<a name="xml" href="#xml">#</a> d3.<b>xml</b>(<i>url</i>[, <i>callback</i>]) [<源码>](https://github.com/d3/d3-request/blob/master/src/xml.js "Source")
 
 返回一个从指定 *url* 以 [get](#request_get) 形式获取 XML 文件的 [*request*](#request)，默认的 mime type 为 `application/xml`。如果没有指定 *callback* 则等价于：
 
