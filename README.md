@@ -1,8 +1,8 @@
 # d3-request
 
-**This module is deprecated as of D3 5.0; please use [d3-fetch](https://github.com/d3/d3-fetch) instead.**
+**这个模块在 D3 5.0 中已经被弃用，请使用 [d3-fetch](https://github.com/xswei/d3-fetch) 代替**
 
-This module provides a convenient alternative to XMLHttpRequest. For example, to load a text file:
+这个模块提供了一个方面的操作 XMLHttpRequest 的封装。例如加载一个文本文件:
 
 ```js
 d3.text("/path/to/file.txt", function(error, text) {
@@ -11,7 +11,7 @@ d3.text("/path/to/file.txt", function(error, text) {
 });
 ```
 
-To load and parse a CSV file:
+加载并解析一个 CSV 文件:
 
 ```js
 d3.csv("/path/to/file.csv", function(error, data) {
@@ -20,7 +20,7 @@ d3.csv("/path/to/file.csv", function(error, data) {
 });
 ```
 
-To post some query parameters:
+使用 past 方法传递参数:
 
 ```js
 d3.request("/path/to/resource")
@@ -176,7 +176,7 @@ An optional *row* conversion function may be specified to map and filter row obj
 
 ```js
 function row(d) {
-  return {
+  return {`
     year: new Date(+d.Year, 0, 1), // convert "Year" column to Date
     make: d.Make,
     model: d.Model,
